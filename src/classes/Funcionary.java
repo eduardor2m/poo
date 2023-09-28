@@ -3,9 +3,9 @@ package classes;
 public class Funcionary extends Person {
   private double salary;
 
-  public Funcionary(String name, String CPF, String birthdate, double salary) {
+  public Funcionary(String name, String CPF, String birthdate) {
     super(name, CPF, birthdate);
-    this.salary = salary;
+    this.salary = 0.0;
   }
 
   public double getSalary() {
