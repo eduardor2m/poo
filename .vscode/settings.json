@@ -1,0 +1,8 @@
+{
+  "workbench.tree.indent": 16,
+  "material-icon-theme.folders.associations": {
+    "exercicios": "rules",
+    "aulas": "docs",
+    "recursos": "supabase",
+  },
+}
