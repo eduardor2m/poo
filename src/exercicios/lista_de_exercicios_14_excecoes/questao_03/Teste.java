@@ -1,14 +1,16 @@
 package exercicios.lista_de_exercicios_14_excecoes.questao_03;
 
 import exercicios.lista_de_exercicios_14_excecoes.questao_03.classes.*;
+import recursos.revisao_excecoes.NotaInvalidaException;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Teste {
-  private static ArrayList<Aluno> alunos = new ArrayList<>();
-  private static ArrayList<Professor> professores = new ArrayList<>();
+  private static List<Aluno> alunos = new ArrayList<>();
+  private static List<Professor> professores = new ArrayList<>();
   private static Scanner scanner = new Scanner(System.in);
 
   public static void main(String[] args) {
@@ -46,6 +48,8 @@ public class Teste {
             System.out.println("Opção inválida. Tente novamente.");
             break;
         }
+      } catch (NotaInvalidaException e) {
+        System.out.println("dudu: " + e.getMessage());
       } catch (InputMismatchException e) {
         System.out.println("Entrada inválida. Por favor, insira um número.");
         scanner.nextLine(); // Limpar o buffer do scanner
@@ -66,7 +70,7 @@ public class Teste {
     System.out.println("0 - Sair");
   }
 
-  private static void cadastrarAluno() throws Exception {
+  private static void cadastrarAluno() throws NotaInvalidaException, Exception {
     System.out.print("Nome do Aluno: ");
     String nome = scanner.nextLine();
     System.out.print("CPF do Aluno: ");
@@ -83,6 +87,7 @@ public class Teste {
     for (int i = 0; i < 4; i++) {
       System.out.print("Nota " + (i + 1) + ": ");
       double nota = scanner.nextDouble();
+      validarNota(nota);
       aluno.setNota(i, nota);
     }
 
@@ -197,5 +202,11 @@ public class Teste {
       }
     }
     return null;
+  }
+
+  private static void validarNota(double n) {
+    if (n < 0 || n > 10) {
+      throw new NotaInvalidaException("nota inválida");
+    }
   }
 }
