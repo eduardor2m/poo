@@ -3,8 +3,8 @@ package exercicios.lista_de_exercicios_14_excecoes.questao_03.classes;
 public class Professor extends Pessoa {
   private double salario;
 
-  public Professor(String name, String CPF, String dataDeNascimento, double salario) {
-    super(name, CPF, dataDeNascimento);
+  public Professor(String nome, String cpf, String dataNascimento, double salario) {
+    super(nome, cpf, dataNascimento);
     this.salario = salario;
   }
 
@@ -12,10 +12,8 @@ public class Professor extends Pessoa {
     return salario;
   }
 
+  @Override
   public String toString() {
-    return "Nome: " + getName() + "\n" +
-        "CPF: " + getCPF() + "\n" +
-        "Data de nascimento: " + getDataDeNascimento() + "\n" +
-        "Salário: " + salario;
+    return super.toString() + "\nSalário: " + salario;
   }
 }
