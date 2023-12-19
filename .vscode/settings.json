@@ -4,5 +4,7 @@
     "exercicios": "rules",
     "aulas": "docs",
     "recursos": "supabase",
+    "provas": "test",
+    "exceptions": "event",
   },
 }
