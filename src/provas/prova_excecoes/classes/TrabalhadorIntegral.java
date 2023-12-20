@@ -2,15 +2,16 @@ package provas.prova_excecoes.classes;
 
 public class TrabalhadorIntegral extends Trabalhador {
 
-  public TrabalhadorIntegral(String name, double salario, int idade, double bonus) {
+  public TrabalhadorIntegral(String name, double salario, int idade) {
     super(name, salario, idade);
   }
 
+  @Override
   public double calcSalario() {
-    if (this.getIdade() <= 30) {
-      return this.getSalario() * 1.16;
+    if (super.getIdade() <= 30) {
+      return super.getSalario() * 1.16;
     } else {
-      return this.getSalario() * 1.30;
+      return super.getSalario() * 1.30;
     }
   }
 }

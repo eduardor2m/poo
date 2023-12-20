@@ -9,7 +9,7 @@ public class TrabalhadorHorista extends Trabalhador {
   }
 
   public double calcSalario() {
-    return this.getSalario() * this.horasTrabalhadas;
+    return super.getSalario() * this.horasTrabalhadas;
   }
 
 }

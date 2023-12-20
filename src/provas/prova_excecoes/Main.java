@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import provas.prova_excecoes.classes.Trabalhador;
 import provas.prova_excecoes.classes.TrabalhadorHorista;
+import provas.prova_excecoes.classes.TrabalhadorIntegral;
 import provas.prova_excecoes.exceptions.TrabalhadorNaoEncontradoException;
 import provas.prova_excecoes.exceptions.ValorInvalidoException;
 
@@ -59,10 +60,8 @@ public class Main {
             }
             System.out.println("Digite a idade do trabalhador: ");
             idade = sc.nextInt();
-            System.out.println("Digite as horas trabalhadas do trabalhador: ");
-            horasTrabalhadas = sc.nextInt();
 
-            Trabalhador trabalhadorIntegral = new TrabalhadorHorista(name, salario, idade, horasTrabalhadas);
+            Trabalhador trabalhadorIntegral = new TrabalhadorIntegral(name, salario, idade);
             trabalhadores.add(trabalhadorIntegral);
             break;
           case 3:
